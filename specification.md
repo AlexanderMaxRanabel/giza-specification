@@ -1,5 +1,5 @@
 Giza Protocol Specification
-Version: 1.0
+Version: 1.1
 
 1. Protocol Overview:
 The Giza protocol enables communication between clients and a display server. It facilitates the rendering and composition of graphical elements on the display, as well as handling user input events.
@@ -13,13 +13,14 @@ The Giza protocol consists of the following components:
 
 2.2. Compositor:
 - The compositor is the central component of the display server responsible for managing the composition of graphical elements.
-- It receives requests from clients and coordinates the rendering process.
+- It receives requests from clients and coordinates the rendering process and distributes episodes / divided requests beetween sub-compositors.
 
 2.3. Sub-compositor:
 - Sub-compositors are specialized components within the compositor that handle specific episodes or tasks.
 - They receive episodes from the main compositor and perform translation and processing.
 
 2.4. Kernel:
+- The Kernel mostly represents Linux kernel.
 - The kernel represents the underlying operating system and hardware.
 - Sub-compositors communicate with the kernel to interact with the display hardware and manage input events.
 
@@ -39,7 +40,7 @@ The Giza protocol uses a binary message format for communication. Each message c
 
 4.1. Message Header:
 The message header includes the following fields:
-- Magic Number: A unique identifier indicating the protocol.
+- Magic Number: A unique identifier indicating the protocol. Must be 14 character long.
 - Message Length: The length of the entire message (header + payload).
 - Message Type: Specifies the type of message (e.g., request, response, event).
 - Message ID: An identifier for tracking requests and matching responses.
