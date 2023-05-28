@@ -46,7 +46,7 @@ The message header includes the following fields:
 - Message ID: An identifier for tracking requests and matching responses.
 
 4.2. Payload:
-The payload contains the specific data for each message type. The format of the payload varies depending on the operation being performed.
+The payload contains the specific data for each message type. The format of the payload varies depending on the operation being performed and implemented by Protocol Implementer.
 
 5. Security Considerations:
 - Giza protocol should incorporate secure communication mechanisms, such as encryption and authentication, to protect against unauthorized access or tampering.
@@ -56,3 +56,7 @@ The payload contains the specific data for each message type. The format of the 
 6. Versioning and Compatibility:
 - The Giza protocol should support versioning to accommodate future enhancements and changes.
 - Version negotiation mechanisms should be in place to ensure compatibility between different protocol versions.
+
+### Licensing
+
+Specification is licensed under BSD 3-Clause License.
